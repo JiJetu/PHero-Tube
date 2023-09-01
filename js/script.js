@@ -7,7 +7,7 @@ const handleCategory = async () => {
     data.data.slice(0, 4).forEach((category) => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <a onclick="handleLoad('${category.category_id}')" class="tab">${category.category}</a>
+        <a onclick="handleLoad('${category.category_id}')" id="tab-${count++}" class="tab">${category.category}</a>
         `;
         tabContainer.appendChild(div);
     });
@@ -21,6 +21,8 @@ const handleLoad = async (categoryId) => {
 
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
+
+
     data.data?.forEach((cardData) => {
         console.log(cardData);
         const div = document.createElement('div');
@@ -33,7 +35,12 @@ const handleLoad = async (categoryId) => {
                 </div>
                 <div>
                     <h2 class="card-title">${cardData.title}</h2>
-                    <p>${cardData?.authors[0]?.profile_name}</p>
+                    <div class="flex items-center gap-2">
+                            <p>${cardData?.authors[0]?.profile_name}</p>
+                            <p>
+                            ${cardData?.authors[0]?.verified ? '<img src="./image/fi_10629607.svg" alt="">' : ""}
+                            </p>
+                        </div>
                     <p>${cardData?.others?.views}</p>
                 </div>
             </div>
@@ -48,4 +55,4 @@ const handleLoad = async (categoryId) => {
 
 
 handleCategory();
-handleLoad('1000')
+handleLoad('1000');

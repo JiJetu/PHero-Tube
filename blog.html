@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <!-- daisy and tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Inter google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        .inter-font {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="inter-font">
+    <section class="container mx-auto mt-20">
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">
+                Discuss the scope of var, let, and const
+            </div>
+            <div class="collapse-content">
+                <p>
+                    <span class="text-2xl text-gray-400">var:</span> Function-scoped, hoisted, and can be redeclared and reassigned. Avoid using var in modern
+                    JavaScript as it can lead to unexpected behavior.
+                    <br>
+                    <span class="text-2xl text-gray-400">let:</span> Block-scoped, not hoisted, and can be reassigned. It's suitable for variables that need to
+                    change their values within a block.
+                    <br>
+                    <span class="text-2xl text-gray-400">const:</span> Block-scoped, not hoisted, and cannot be reassigned. Use const for variables that should
+                    never change their value after assignment. However, note that the content of objects and arrays
+                    assigned to const can be modified.
+                </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                Tell us the use cases of null and undefined
+            </div>
+            <div class="collapse-content">
+                <p>
+                    <span class="text-2xl text-gray-400">null:</span> Typically used by developers to explicitly represent the absence of a value or to reset a variable's value to nothing.
+                    <br>
+                    <span class="text-2xl text-gray-400">undefined:</span> Often represents the unintentional absence of a value, typically when a variable is declared but not assigned a value. It's also the default return value of functions without a return statement.
+                </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                What do you mean by REST API?
+            </div>
+            <div class="collapse-content">
+                <p>
+                    <span class="text-2xl text-gray-400">REST API</span> (Representational State Transfer Application Programming Interface) is a standardized way for software applications to communicate and exchange data over the internet using standard HTTP methods. It follows a set of architectural principles, such as statelessness, resource-based URLs, and HTTP verbs, to enable easy and scalable interaction between different systems and services.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="container mx-auto text-center mt-4">
+        <button class="bg-red-500 hover:bg-slate-200 text-white hover:text-black px-5 py-4 rounded-lg"><a href="./index.html">Home</a></button>
+    </section>
+</body>
+
+</html>
