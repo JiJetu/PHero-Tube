@@ -26,23 +26,46 @@
 <body class="inter-font">
     <header class="container mx-auto">
         <section>
-            <div class="navbar bg-base-100 drop-shadow-md py-8">
-                <div class="navbar-start">
-                    <img src="./Logo.png" alt="img">
+            <div class="flex justify-between items-center bg-base-100 border-b-2 py-8">
+                <div class="">
+                    <img class="w-32 md:w-44" src="./Logo.png" alt="img">
                 </div>
-                <div class="navbar-center">
-                    <button class="bg-slate-200 text-black rounded-md px-5 py-3">Sort by view</button>
+                <div class="">
+                    <button class="bg-slate-200 text-black rounded-md p-2 md:px-5 py-1 md:py-3">Sort by view</button>
                 </div>
-                <div class="navbar-end">
+                <div class="">
                     <button
-                        class="bg-[#FF1F3D] hover:bg-slate-200 text-white hover:text-black rounded-md px-5 py-3">Blog</button>
+                        class="bg-[#FF1F3D] hover:bg-slate-200 text-white hover:text-black rounded-md p-2 md:px-5 py-1 md:p-3">Blog</button>
                 </div>
             </div>
-            
         </section>
     </header>
     <main>
-
+        <!-- button section -->
+        <section>
+            <div class="w-full my-8">
+                <div class="tabs p-5 text-center flex justify-center gap-6" id="tab-container">
+                    <!-- <a class="tab">Tab 1</a> 
+                    <a class="tab tab-active">Tab 2</a> 
+                    <a class="tab">Tab 3</a> -->
+                  </div>
+            </div>
+        </section>
+        <section id="card-container" class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- <div class="card card-compact bg-base-100">
+                <figure><img src="./Icon.png" alt="img" /></figure>
+                <div class="flex gap-3 mt-4">
+                    <div>
+                        <img src="./Logo.png" class="w-4 rounded-full p-5 bg-red-600" alt="img">
+                    </div>
+                    <div>
+                        <h2 class="card-title">Building a Winning UX Strategy Using the Kano Model</h2>
+                        <p>Awlad Hossain</p>
+                        <p>91K views</p>
+                    </div>
+                </div>
+            </div> -->
+        </section>
     </main>
     <footer>
 
