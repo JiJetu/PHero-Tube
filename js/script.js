@@ -25,12 +25,23 @@ const handleLoad = async (categoryId) => {
 
     const mainData = data.data;
     if(mainData.length > 0){
-        data.data?.forEach((cardData) => {
-            console.log(cardData);
+        mainData?.forEach((cardData) => {
+            // console.log(cardData);
+
+            const sec = cardData?.others?.posted_date;
+            // console.log(sec);
+            const hrs = parseInt(sec/3600);
+            const min = parseInt(((sec/3600)-hrs)*60);
+            const print = `${hrs} hrs ${min} min ago`;
+            // console.log(print);
+
             const div = document.createElement('div');
             div.innerHTML = `
             <div class="card card-compact bg-base-100 h-[308px]">
-                <figure"><img class="w-full h-[200px]" src="${cardData.thumbnail}" /></figure>
+                <div class="relative">
+                    <figure"><img class="w-full h-[200px]" src="${cardData.thumbnail}" /></figure>
+                    <p class="bg-black text-white p-1 absolute bottom-2 right-2">${cardData?.others?.posted_date ? print : ""}</p>
+                </div>
                 <div class="flex gap-3 mt-4">
                     <div>
                         <img src="${cardData?.authors[0]?.profile_picture}" class="rounded-full w-10 h-10" alt="img">
@@ -66,9 +77,9 @@ const handleLoad = async (categoryId) => {
             cardContainer.appendChild(div);
     }
 
-    console.log(data.data);
+    console.log(mainData);
 }
 
 
 handleCategory();
-handleLoad('1005');
+handleLoad('1000');
