@@ -1,3 +1,5 @@
+let sort = [];
+
 const handleCategory = async () => {
     const res = await fetch("https://openapi.programming-hero.com/api/videos/categories");
     const data = await res.json();
@@ -15,15 +17,24 @@ const handleCategory = async () => {
     // console.log(data.data.category);
 }
 
-const handleLoad = async (categoryId) => {
+const handleLoad = async (categoryId = '1000') => {
     // console.log(categoryId);
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await res.json();
 
+    const mainData = data.data;
+    sort = mainData;
+    
+    displayLoad(mainData);
+
+    
+    // console.log(mainData);
+}
+
+const displayLoad = (mainData) =>{
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
 
-    const mainData = data.data;
     if(mainData.length > 0){
         mainData?.forEach((cardData) => {
             // console.log(cardData);
@@ -61,6 +72,7 @@ const handleLoad = async (categoryId) => {
                 `;
     
             cardContainer.appendChild(div);
+            // sort.push(cardContainer);
         })
     }
     else{
@@ -76,10 +88,20 @@ const handleLoad = async (categoryId) => {
     
             cardContainer.appendChild(div);
     }
-
-    console.log(mainData);
 }
 
+const sortView = () => {
+    const newData = sort.sort((a, b) => {
+        return parseFloat(b.others?.views) - parseFloat(a.others?.views);
+    })
+    console.log(newData);
+    displayLoad(newData);
+    // console.log(...sort.sort((a, b) => b.views - a.views));
+    // cards.forEach( (card) => {
+    //     card.sort((a, b) => b.views - a.views);
+    //     handleLoad(card);
+    // })
+}
 
 handleCategory();
-handleLoad('1000');
+handleLoad();
